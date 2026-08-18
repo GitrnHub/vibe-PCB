@@ -1,5 +1,15 @@
 const tabs=[...document.querySelectorAll('[data-tab]')];
 tabs.forEach(btn=>btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.techPane').forEach(p=>p.classList.toggle('active',p.id===btn.dataset.tab));}));
+
+const downloadGrid=document.querySelector('.downloadGrid');
+if(downloadGrid){
+  const source=document.createElement('a');
+  source.className='download';
+  source.href='https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source';
+  source.innerHTML='<b>Editable PCB source ↗</b><span>KiCad schematic + checksum-verified PCB/design sources</span>';
+  downloadGrid.prepend(source);
+}
+
 const tbody=document.querySelector('#bom tbody');const search=document.querySelector('#bomSearch');let bom=[];
 function parseCSV(text){const rows=[];let row=[],cell='',q=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&q&&n==='"'){cell+='"';i++;}else if(c==='"'){q=!q;}else if(c===','&&!q){row.push(cell);cell='';}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cell);if(row.some(x=>x!==''))rows.push(row);row=[];cell='';}else cell+=c;}if(cell||row.length){row.push(cell);rows.push(row);}return rows;}
 async function loadBom(){try{const text=await (await fetch('./data/bom.csv')).text();const rows=parseCSV(text.trim());const h=rows.shift();bom=rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,r[i]||''])));renderBom('');}catch(e){tbody.innerHTML='<tr><td colspan="5">BOM data could not be loaded.</td></tr>';}}
