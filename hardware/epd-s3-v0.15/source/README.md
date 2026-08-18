@@ -16,13 +16,13 @@ The original `EPD_S3_Universal.kicad_pcb` is preserved losslessly inside a packe
 Rebuild on Linux/macOS/Git Bash:
 
 ```sh
-./rebuild_packed_sources.sh
+sh rebuild_packed_sources.sh
 ```
 
 Rebuild on Windows PowerShell:
 
 ```powershell
-./rebuild_packed_sources.ps1
+powershell -ExecutionPolicy Bypass -File .\rebuild_packed_sources.ps1
 ```
 
 Expected archive:
