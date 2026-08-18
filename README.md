@@ -2,6 +2,8 @@
 
 **AI-assisted open hardware, from PCB to complete product.**
 
+**Live engineering site:** https://gitrnhub.github.io/vibe-PCB/
+
 `vibe-PCB` is a reproducible hardware-product repository. The first reference product, **vibe-EPD**, combines an ESP32-S3 E-Ink controller board with firmware, manufacturing data, a parametric enclosure, product documentation and a technical GitHub Pages site.
 
 > Status: **prototype / first-article stage**. The repository separates released v0.15 hardware facts from roadmap features so that visual polish does not become a false manufacturing claim.
@@ -10,9 +12,9 @@
 
 | Layer | Deliverables |
 |---|---|
-| Electronics | source manifest, netlist, pin maps and manufacturing package |
+| Electronics | editable/canonical source preservation, schematic, netlist, pin maps and manufacturing package |
 | Manufacturing | Gerber ZIP, drill data inside the package, BOM, CPL |
-| Firmware | PlatformIO bring-up baseline and board pin definitions |
+| Firmware | PlatformIO board support plus SoftAP local web console, status/reset/deep-sleep APIs |
 | Mechanical | Parametric OpenSCAD enclosure source |
 | Product | specification, architecture, assembly guide, test plan |
 | Visualization | product render, exploded view, PCB/schematic/Gerber previews, searchable BOM |
@@ -24,13 +26,16 @@
 - **PCB:** 60 × 45 mm, 2-layer prototype
 - **Display interface:** 24-pin, 0.5 mm E-Paper FPC
 - **Connectivity:** Wi-Fi / BLE; native USB signals exposed on J1
+- **Local device UI:** SoftAP `vibe-EPD-setup` + browser status/control page
 - **Reference mechanical target:** 4.2-inch, 91 × 77 mm panel class
 - **Enclosure:** 104 × 90 × ~16.8 mm target envelope, parametric OpenSCAD
 
 ## Start here
 
+- Live site: <https://gitrnhub.github.io/vibe-PCB/>
 - Website source: [`docs/`](./docs)
 - Hardware: [`hardware/epd-s3-v0.15/`](./hardware/epd-s3-v0.15)
+- Editable/canonical source: [`hardware/epd-s3-v0.15/source/`](./hardware/epd-s3-v0.15/source)
 - Firmware: [`firmware/`](./firmware)
 - Enclosure: [`mechanical/enclosure-v0.1/`](./mechanical/enclosure-v0.1)
 - Product docs: [`product/`](./product)
@@ -46,9 +51,7 @@ For SMT assembly, also use the matching BOM/CPL in `hardware/epd-s3-v0.15/assemb
 
 ## GitHub Pages
 
-A static site is provided in `docs/` and a Pages workflow lives in `.github/workflows/pages.yml`. The site intentionally has no build dependency: HTML, CSS, JavaScript, SVG and local assets only.
-
-If GitHub Pages is not enabled yet, set **Settings → Pages → Source → GitHub Actions** once; subsequent pushes to `main` that touch `docs/**` deploy automatically.
+Pages is configured to deploy the static `docs/` site using `.github/workflows/pages.yml`. The site intentionally has no build dependency: HTML, CSS, JavaScript, SVG and local assets only. Pushes to `main` that touch `docs/**` trigger a fresh deployment.
 
 ## Engineering boundary
 
