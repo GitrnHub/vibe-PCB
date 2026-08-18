@@ -1,0 +1,12 @@
+Function,ESP32-S3 GPIO,Note
+I2C_SCL,9,J2 pin 6 / touch-temperature auxiliary bus
+I2C_SDA,10,J2 pin 7 / touch-temperature auxiliary bus
+EPD_BUSY,11,J2 pin 9 / input with 10k pull-up
+EPD_RST,12,J2 pin 10
+EPD_DC,13,J2 pin 11
+EPD_CS,14,J2 pin 12
+EPD_SCLK,21,J2 pin 13
+EPD_MOSI,47,J2 pin 14
+USB_D-,19,native USB via 22R
+USB_D+,20,native USB via 22R
+BOOT,0,boot pushbutton to GND

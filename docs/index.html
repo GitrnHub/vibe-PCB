@@ -1,23 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>vibe-PCB | Open Hardware Product Platform</title>
-<style>
-body{font-family:system-ui;margin:0;background:#0b1020;color:#eee}main{max-width:1100px;margin:auto;padding:48px}h1{font-size:56px}.box{background:#151d35;padding:24px;border-radius:16px;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tag{display:inline-block;padding:8px 14px;background:#25345c;border-radius:20px;margin:4px}
-</style>
+<meta name="description" content="vibe-PCB / vibe-EPD: ESP32-S3 E-Ink open hardware reference product with PCB, Gerber, BOM, firmware, enclosure CAD and GitHub Pages engineering visualization.">
+<title>vibe-PCB · vibe-EPD Open Hardware Product</title>
+<link rel="stylesheet" href="./assets/site.css">
 </head>
-<body><main>
-<h1>vibe-PCB</h1>
-<p>AI Assisted Open Hardware Product Platform</p>
-<div class="box"><h2>vibe-EPD Platform</h2><p>A complete E-Ink device reference design: electronics, PCB, firmware, mechanical structure and manufacturing data.</p></div>
-<div class="grid">
-<div class="box"><h3>Hardware</h3><p>ESP32-S3 core, EPD interface, power system, expansion.</p></div>
-<div class="box"><h3>Firmware</h3><p>Drivers, OTA, display examples and embedded software.</p></div>
-<div class="box"><h3>Mechanical</h3><p>Enclosure, CAD models and product structure.</p></div>
-<div class="box"><h3>Manufacturing</h3><p>PCB, Gerber, BOM, CPL and production workflow.</p></div>
-</div>
-<h2>Engineering Stack</h2>
-<span class="tag">ESP32-S3</span><span class="tag">E-Ink</span><span class="tag">Open Hardware</span><span class="tag">AI Design Log</span>
-</main></body></html>
+<body>
+<nav class="nav"><div class="wrap navin"><div class="brand">vibe<span>-PCB</span></div><div class="links"><a href="#product">产品</a><a href="#engineering">工程</a><a href="#mechanical">结构</a><a href="#manufacturing">制造</a><a href="#downloads">下载</a><a href="https://github.com/GitrnHub/vibe-PCB">GitHub ↗</a></div></div></nav>
+<header class="hero"><div class="wrap heroGrid">
+<div><div class="eyebrow">AI-assisted · open hardware · reproducible</div><h1>不是一块板，<br>是一套完整产品。</h1><p class="lede">vibe-EPD 把 ESP32-S3 墨水屏主板、24-pin E-Paper 接口、固件、制造数据、参数化外壳和产品级技术文档放进同一个可复现工程。</p><div class="actions"><a class="btn primary" href="#engineering">查看技术细节</a><a class="btn" href="https://github.com/GitrnHub/vibe-PCB">打开仓库</a><a class="btn" href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip">下载 Gerber</a></div><div class="micro">当前状态：电子部分 v0.15 prototype candidate · 外壳 v0.1 fit-check · 页面只把已经存在的功能标为“当前”。</div></div>
+<div class="render"><img src="./assets/product-render.svg" alt="vibe-EPD 4.2-inch reference product render"></div>
+</div><div class="wrap metrics"><div class="metric"><b>ESP32-S3</b><span>Wi-Fi · BLE · native USB</span></div><div class="metric"><b>60 × 45 mm</b><span>current PCB outline</span></div><div class="metric"><b>24-pin</b><span>0.5 mm E-Paper FPC</span></div><div class="metric"><b>104 × 90 mm</b><span>reference enclosure face</span></div></div></header>
+
+<section id="product" class="section"><div class="wrap"><div class="kicker"><span class="dot"></span><span class="status now">CURRENT PRODUCT REFERENCE</span></div><h2>完整产品结构</h2><p class="sub">不再只展示 Gerber。页面把屏幕、FPC、PCB、结构件、安装空间与未来扩展边界放到一张产品结构图里，避免把“路线图”误当成“已经做进 PCB 的功能”。</p><div class="visual"><img src="./assets/exploded-view.svg" alt="vibe-EPD exploded product structure"><div class="caption">爆炸结构：前框 → E-Ink 屏 → FPC → 主板 → 后壳。USB-C / 电池区域明确标成 roadmap，不冒充 v0.15 已集成。</div></div></div></section>
+
+<section id="engineering" class="section"><div class="wrap"><h2>工程细节，不是营销图</h2><p class="sub">切换查看系统架构、真实 PCB 预览、原理图与 Gerber 图层。硬件制造文件、BOM/CPL 和机器可读参考数据都在仓库中。</p><div class="techNav"><button class="active" data-tab="arch">系统架构</button><button data-tab="pcb">PCB</button><button data-tab="sch">原理图</button><button data-tab="layers">Gerber</button></div>
+<div id="arch" class="techPane active visual"><img src="./assets/system-architecture.svg" alt="electronics architecture"><div class="caption">ESP32-S3 → SPI/control → EPD interface/HV rails → 24-pin panel；电源与软件服务分别标出。</div></div>
+<div id="pcb" class="techPane visual"><img src="./assets/pcb-preview.svg" alt="annotated PCB top view"><div class="caption">真实 v0.15 PCB 生成预览；制造与参考文件位于 hardware/epd-s3-v0.15。</div></div>
+<div id="sch" class="techPane visual"><img src="./assets/schematic.svg" alt="generated schematic overview"><div class="caption">生成版连通性原理图概览；参考网络表和针脚表位于 hardware/epd-s3-v0.15/reference。</div></div>
+<div id="layers" class="techPane visual"><img src="./assets/gerber-stack.svg" alt="Gerber layers overview"><div class="caption">Gerber/钻孔数据结构说明；真正下单使用仓库中的 Gerber ZIP，并在板厂 CAM/DFM viewer 复核。</div></div>
+
+<div class="grid3" style="margin-top:18px"><div class="card"><span class="status now">NOW</span><h3>主控与联网</h3><p>ESP32-S3-WROOM-1-N8R2，利用 Wi-Fi/BLE 能力；J1 暴露原生 USB 信号与 5 V/GND。</p></div><div class="card"><span class="status now">NOW</span><h3>墨水屏总线</h3><p>24-pin、0.5 mm FPC，包含 SPI、BUSY/RESET/DC/CS、I²C 与 EPD 高压辅助网络。</p></div><div class="card"><span class="status road">ROADMAP</span><h3>产品化电源</h3><p>USB-C、锂电充电、fuel gauge、RTC 将作为后续集成硬件修订；当前 v0.15 不伪装成已具备。</p></div></div>
+</div></section>
+
+<section id="mechanical" class="section"><div class="wrap"><h2>可打印的结构，不只是效果图</h2><p class="sub">已经加入参数化 OpenSCAD 源文件。v0.1 以 4.2-inch、91 × 77 mm 屏幕机械尺寸为参考，并按现有 60 × 45 mm PCB 的四个 M3 孔位生成安装柱。</p><div class="grid2"><div class="visual"><img src="./assets/exploded-view.svg" alt="OpenSCAD enclosure assembly render"><div class="caption">结构爆炸图与 OpenSCAD 文件对应；后壳包含 PCB 安装柱、service opening 与壁挂 relief。</div></div><div class="visual"><img src="./assets/mechanical-drawing.svg" alt="dimensioned mechanical drawing"><div class="caption">参考尺寸图。实际打印前仍需按你最终选定的屏幕 FPC 出线位置和打印公差复核。</div></div></div></div></section>
+
+<section class="section"><div class="wrap"><h2>可搜索 BOM</h2><p class="sub">网页直接加载仓库内的 BOM 数据。可以搜索位号、型号、厂家或 LCSC 料号，不用先下载 CSV。</p><div class="bomTools"><input id="bomSearch" aria-label="Search BOM" placeholder="搜索：ESP32 / C2913204 / Hirose / 0805 ..."></div><div class="tableWrap"><table id="bom"><thead><tr><th>Ref</th><th>Value / Part</th><th>Manufacturer</th><th>LCSC</th><th>Assembly</th></tr></thead><tbody><tr><td colspan="5">Loading BOM…</td></tr></tbody></table></div></div></section>
+
+<section id="manufacturing" class="section"><div class="wrap"><h2>从设计到首板</h2><p class="sub">仓库同时保留板厂文件和工程参考数据。当前验证报告来自生成流程的几何检查，不等同于“已经实物量产验证”。</p><div class="timeline"><div class="step done"><h3>01 / Design data</h3><p>网络表、针脚表、设计验证记录。</p></div><div class="step done"><h3>02 / Manufacturing</h3><p>Gerber + PTH/NPTH drill + BOM + CPL。</p></div><div class="step current"><h3>03 / First article</h3><p>板厂 DFM、SMT 旋转检查、5 pcs 首板验证。</p></div><div class="step"><h3>04 / Product rev</h3><p>实测后再冻结 USB-C / battery / RTC 等产品化修订。</p></div></div><div class="callout" style="margin-top:24px">首次打样前请在 Gerber Viewer/DFM 中逐层核对，并确认你实际购买的屏幕 24-pin pinout、RESE 配置和固件 waveform/LUT。24-pin 只是机械接口特征之一，不等于所有屏都能直接互插。</div></div></section>
+
+<section class="section"><div class="wrap"><h2>屏幕兼容性边界</h2><p class="sub">参考结构锁定到 4.2-inch 机械模板，但电子接口保留为通用 24-pin 方向。较新的 50-pin Spectra 6 等面板仍应使用专用适配/独立硬件修订。</p><div class="visual"><img src="./assets/display-compatibility.svg" alt="screen compatibility matrix"><div class="caption">仓库同时提供 fpc24_pinout.csv 供逐脚核对。</div></div></div></section>
+
+<section id="downloads" class="section"><div class="wrap"><h2>直接拿走工程文件</h2><p class="sub">开发、制造、结构三个入口分开，避免把整个仓库 ZIP 当成 Gerber 上传。</p><div class="downloadGrid"><a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/reference"><b>Hardware reference ↗</b><span>pinout / netlist / validation</span></a><a class="download" href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip"><b>Gerber manufacturing ZIP ↓</b><span>上传板厂的是这个 ZIP</span></a><a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/mechanical/enclosure-v0.1"><b>Enclosure CAD ↗</b><span>Parametric OpenSCAD source</span></a><a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/assembly"><b>BOM + CPL ↗</b><span>JLC-style assembly files</span></a><a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/firmware"><b>Firmware ↗</b><span>PlatformIO bring-up + architecture</span></a><a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/product"><b>Product documents ↗</b><span>spec / architecture / assembly / test plan</span></a></div></div></section>
+
+<section class="section"><div class="wrap"><h2>Roadmap</h2><div class="grid3"><div class="card"><span class="status now">v0.15</span><h3>Electronics core</h3><p>当前可下载 Gerber、BOM/CPL、固件 bring-up 与验证资料。</p></div><div class="card"><span class="status now">v0.1 MECH</span><h3>Reference product</h3><p>4.2-inch 前框、后壳、OpenSCAD 和产品结构可视化。</p></div><div class="card"><span class="status road">NEXT</span><h3>Integrated product PCB</h3><p>USB-C、battery charger/fuel gauge、RTC，以及针对确定屏幕系列的正式 firmware profile。</p></div></div></div></section>
+<footer class="footer"><div class="wrap">vibe-PCB · open hardware engineering repository · <span id="year"></span> · Prototype data requires first-article verification before production.</div></footer>
+<script src="./assets/site.js"></script>
+</body></html>

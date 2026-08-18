@@ -1,0 +1,25 @@
+Pin,Signal,Board connection / note
+1,NC,No connection
+2,GDR,Gate-drive control to external booster MOSFET gate
+3,RESE,Current-sense setting; select 0.47R or 2.2R with SJ1
+4,VGL,Panel high-voltage bypass
+5,VGH,Panel high-voltage bypass
+6,I2C_SCL,Auxiliary I2C/temperature/touch SCL where supported
+7,I2C_SDA,Auxiliary I2C/temperature/touch SDA where supported
+8,BS,3R strap to GND for 4-wire SPI
+9,EPD_BUSY,Busy/status input
+10,EPD_RST,Panel reset
+11,EPD_DC,Data/command
+12,EPD_CS,SPI chip-select
+13,EPD_SCLK,SPI clock
+14,EPD_MOSI,SPI data input
+15,3V3,VDDIO
+16,3V3,VCI
+17,GND,VSS
+18,VDD_EPD,External panel rail bypass
+19,VPP,External panel rail bypass
+20,VSH,External panel rail bypass
+21,PREVGH,Positive charge-pump pre-rail
+22,VSL,External panel rail bypass
+23,PREVGL,Negative charge-pump pre-rail
+24,VCOM,External panel rail bypass

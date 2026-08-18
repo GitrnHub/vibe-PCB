@@ -1,0 +1,22 @@
+EPD-S3-Universal generated package validation
+Date: 2026-08-18
+Revision: 0.15-prototype-candidate
+
+Canonical geometry:
+  parts: 45
+  pads: 168
+  tracks: 332
+  vias: 72
+  nets: 35
+
+Package-level checks:
+  errors: 0
+  warnings: 0
+
+External geometry validator result (run separately on canonical design.json):
+  actual final result: FEATURES 652 / TRACKS 332 / VIAS 72 / ERRORS 0 / WARNINGS 0
+
+IMPORTANT LIMITATION:
+  kicad-cli / pcbnew / gerbv were not available in the original generation runtime.
+  Therefore this report is not a substitute for KiCad DRC or an independent CAM render.
+  Run PCB-house DFM/visual inspection before ordering and verify CPL rotations in the assembly preview.
