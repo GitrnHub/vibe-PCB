@@ -1,0 +1,932 @@
+EESchema Schematic File Version 4
+LIBS:EPD_S3_Universal-cache
+EELAYER 29 0
+EELAYER END
+$Descr A0 46811 33110
+Sheet 1 1
+Title "EPD-S3-Universal connectivity reference"
+Comment1 "Generated from design.json; use net labels as authoritative connectivity."
+Comment2 "Prototype candidate - verify in KiCad before fabrication."
+$EndDescr
+$Comp
+L EPD_S3_Universal-cache:GEN_U1 U1
+U 1 1 8F95B224
+P 2500 4350
+F 0 "U1" H 2500 1500 50  0000 C CNN
+F 1 "ESP32-S3-WROOM-1-N8R2" H 2500 7200 50  0000 C CNN
+	1    2500 4350
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 6750 2000 6750
+Text Label 1780 6750 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 6350 2000 6350
+Text Label 1780 6350 2    40   ~ 0
+USB_DM_MCU
+Wire Wire Line
+	1800 6250 2000 6250
+Text Label 1780 6250 2    40   ~ 0
+USB_DP_MCU
+Wire Wire Line
+	1800 5950 2000 5950
+Text Label 1780 5950 2    40   ~ 0
+I2C_SCL
+Wire Wire Line
+	1800 5850 2000 5850
+Text Label 1780 5850 2    40   ~ 0
+I2C_SDA
+Wire Wire Line
+	1800 5750 2000 5750
+Text Label 1780 5750 2    40   ~ 0
+EPD_BUSY
+Wire Wire Line
+	1800 5650 2000 5650
+Text Label 1780 5650 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 5550 2000 5550
+Text Label 1780 5550 2    40   ~ 0
+EPD_RST
+Wire Wire Line
+	1800 5450 2000 5450
+Text Label 1780 5450 2    40   ~ 0
+EPD_DC
+Wire Wire Line
+	1800 5350 2000 5350
+Text Label 1780 5350 2    40   ~ 0
+EPD_CS
+Wire Wire Line
+	1800 5250 2000 5250
+Text Label 1780 5250 2    40   ~ 0
+EPD_SCLK
+Wire Wire Line
+	1800 5150 2000 5150
+Text Label 1780 5150 2    40   ~ 0
+EPD_MOSI
+Wire Wire Line
+	1800 4850 2000 4850
+Text Label 1780 4850 2    40   ~ 0
+BOOT
+Wire Wire Line
+	1800 4550 2000 4550
+Text Label 1780 4550 2    40   ~ 0
+EN
+Wire Wire Line
+	1800 3350 2000 3350
+Text Label 1780 3350 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 3250 2000 3250
+Text Label 1780 3250 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 3150 2000 3150
+Text Label 1780 3150 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 3050 2000 3050
+Text Label 1780 3050 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2950 2000 2950
+Text Label 1780 2950 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2850 2000 2850
+Text Label 1780 2850 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2750 2000 2750
+Text Label 1780 2750 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2650 2000 2650
+Text Label 1780 2650 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2550 2000 2550
+Text Label 1780 2550 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 2450 2000 2450
+Text Label 1780 2450 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_U2 U2
+U 1 1 C0187C1F
+P 2500 8150
+F 0 "U2" H 2500 7500 50  0000 C CNN
+F 1 "SY8089A1AAC" H 2500 8800 50  0000 C CNN
+	1    2500 8150
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 8350 2000 8350
+Text Label 1780 8350 2    40   ~ 0
+VBUS_5V
+Wire Wire Line
+	1800 8250 2000 8250
+Text Label 1780 8250 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 8150 2000 8150
+Text Label 1780 8150 2    40   ~ 0
+BUCK_SW
+Wire Wire Line
+	1800 8050 2000 8050
+Text Label 1780 8050 2    40   ~ 0
+VBUS_5V
+Wire Wire Line
+	1800 7950 2000 7950
+Text Label 1780 7950 2    40   ~ 0
+BUCK_FB
+$Comp
+L EPD_S3_Universal-cache:GEN_Q1 Q1
+U 1 1 24A0005B
+P 2500 9650
+F 0 "Q1" H 2500 9100 50  0000 C CNN
+F 1 "SI1308EDL" H 2500 10200 50  0000 C CNN
+	1    2500 9650
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 9750 2000 9750
+Text Label 1780 9750 2    40   ~ 0
+GDR
+Wire Wire Line
+	1800 9650 2000 9650
+Text Label 1780 9650 2    40   ~ 0
+RESE
+Wire Wire Line
+	1800 9550 2000 9550
+Text Label 1780 9550 2    40   ~ 0
+SW_EPD
+$Comp
+L EPD_S3_Universal-cache:GEN_J1 J1
+U 1 1 2B46C7A3
+P 2500 11100
+F 0 "J1" H 2500 10500 50  0000 C CNN
+F 1 "USB_NATIVE_1x4" H 2500 11700 50  0000 C CNN
+	1    2500 11100
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 11250 2000 11250
+Text Label 1780 11250 2    40   ~ 0
+VBUS_5V
+Wire Wire Line
+	1800 11150 2000 11150
+Text Label 1780 11150 2    40   ~ 0
+USB_D-
+Wire Wire Line
+	1800 11050 2000 11050
+Text Label 1780 11050 2    40   ~ 0
+USB_D+
+Wire Wire Line
+	1800 10950 2000 10950
+Text Label 1780 10950 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_J2 J2
+U 1 1 419CB03C
+P 2500 13700
+F 0 "J2" H 2500 12000 50  0000 C CNN
+F 1 "FH12-24S-0.5SH(55)" H 2500 15400 50  0000 C CNN
+	1    2500 13700
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 14850 2000 14850
+Text Label 1780 14850 2    40   ~ 0
+EPD_RST
+Wire Wire Line
+	1800 14750 2000 14750
+Text Label 1780 14750 2    40   ~ 0
+EPD_DC
+Wire Wire Line
+	1800 14650 2000 14650
+Text Label 1780 14650 2    40   ~ 0
+EPD_CS
+Wire Wire Line
+	1800 14550 2000 14550
+Text Label 1780 14550 2    40   ~ 0
+EPD_SCLK
+Wire Wire Line
+	1800 14450 2000 14450
+Text Label 1780 14450 2    40   ~ 0
+EPD_MOSI
+Wire Wire Line
+	1800 14350 2000 14350
+Text Label 1780 14350 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 14250 2000 14250
+Text Label 1780 14250 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 14150 2000 14150
+Text Label 1780 14150 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 14050 2000 14050
+Text Label 1780 14050 2    40   ~ 0
+VDD_EPD
+Wire Wire Line
+	1800 13950 2000 13950
+Text Label 1780 13950 2    40   ~ 0
+VPP
+Wire Wire Line
+	1800 13850 2000 13850
+Text Label 1780 13850 2    40   ~ 0
+GDR
+Wire Wire Line
+	1800 13750 2000 13750
+Text Label 1780 13750 2    40   ~ 0
+VSH
+Wire Wire Line
+	1800 13650 2000 13650
+Text Label 1780 13650 2    40   ~ 0
+PREVGH
+Wire Wire Line
+	1800 13550 2000 13550
+Text Label 1780 13550 2    40   ~ 0
+VSL
+Wire Wire Line
+	1800 13450 2000 13450
+Text Label 1780 13450 2    40   ~ 0
+PREVGL
+Wire Wire Line
+	1800 13350 2000 13350
+Text Label 1780 13350 2    40   ~ 0
+VCOM
+Wire Wire Line
+	1800 13250 2000 13250
+Text Label 1780 13250 2    40   ~ 0
+RESE
+Wire Wire Line
+	1800 13150 2000 13150
+Text Label 1780 13150 2    40   ~ 0
+VGL
+Wire Wire Line
+	1800 13050 2000 13050
+Text Label 1780 13050 2    40   ~ 0
+VGH
+Wire Wire Line
+	1800 12950 2000 12950
+Text Label 1780 12950 2    40   ~ 0
+I2C_SCL
+Wire Wire Line
+	1800 12850 2000 12850
+Text Label 1780 12850 2    40   ~ 0
+I2C_SDA
+Wire Wire Line
+	1800 12750 2000 12750
+Text Label 1780 12750 2    40   ~ 0
+BS
+Wire Wire Line
+	1800 12650 2000 12650
+Text Label 1780 12650 2    40   ~ 0
+EPD_BUSY
+Wire Wire Line
+	1800 12550 2000 12550
+Text Label 1780 12550 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 12450 2000 12450
+Text Label 1780 12450 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_SW1 SW1
+U 1 1 32188E4B
+P 2500 16300
+F 0 "SW1" H 2500 15700 50  0000 C CNN
+F 1 "RESET" H 2500 16900 50  0000 C CNN
+	1    2500 16300
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 16450 2000 16450
+Text Label 1780 16450 2    40   ~ 0
+EN
+Wire Wire Line
+	1800 16350 2000 16350
+Text Label 1780 16350 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 16250 2000 16250
+Text Label 1780 16250 2    40   ~ 0
+EN
+Wire Wire Line
+	1800 16150 2000 16150
+Text Label 1780 16150 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_SW2 SW2
+U 1 1 053F8D6B
+P 2500 17800
+F 0 "SW2" H 2500 17200 50  0000 C CNN
+F 1 "BOOT" H 2500 18400 50  0000 C CNN
+	1    2500 17800
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 17950 2000 17950
+Text Label 1780 17950 2    40   ~ 0
+BOOT
+Wire Wire Line
+	1800 17850 2000 17850
+Text Label 1780 17850 2    40   ~ 0
+GND
+Wire Wire Line
+	1800 17750 2000 17750
+Text Label 1780 17750 2    40   ~ 0
+BOOT
+Wire Wire Line
+	1800 17650 2000 17650
+Text Label 1780 17650 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_SJ1 SJ1
+U 1 1 63899EC4
+P 2500 19250
+F 0 "SJ1" H 2500 18700 50  0000 C CNN
+F 1 "RESE_SELECT" H 2500 19800 50  0000 C CNN
+	1    2500 19250
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 19350 2000 19350
+Text Label 1780 19350 2    40   ~ 0
+RESE_047
+Wire Wire Line
+	1800 19250 2000 19250
+Text Label 1780 19250 2    40   ~ 0
+RESE
+Wire Wire Line
+	1800 19150 2000 19150
+Text Label 1780 19150 2    40   ~ 0
+RESE_2R2
+$Comp
+L EPD_S3_Universal-cache:GEN_L1 L1
+U 1 1 9457F924
+P 2500 20600
+F 0 "L1" H 2500 20100 50  0000 C CNN
+F 1 "2.2uH 2A" H 2500 21100 50  0000 C CNN
+	1    2500 20600
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 20650 2000 20650
+Text Label 1780 20650 2    40   ~ 0
+BUCK_SW
+Wire Wire Line
+	1800 20550 2000 20550
+Text Label 1780 20550 2    40   ~ 0
+3V3
+$Comp
+L EPD_S3_Universal-cache:GEN_C1 C1
+U 1 1 20E59DDF
+P 2500 21900
+F 0 "C1" H 2500 21400 50  0000 C CNN
+F 1 "10uF 10V" H 2500 22400 50  0000 C CNN
+	1    2500 21900
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 21950 2000 21950
+Text Label 1780 21950 2    40   ~ 0
+VBUS_5V
+Wire Wire Line
+	1800 21850 2000 21850
+Text Label 1780 21850 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C2 C2
+U 1 1 AA71FF89
+P 2500 23200
+F 0 "C2" H 2500 22700 50  0000 C CNN
+F 1 "22uF 6.3V" H 2500 23700 50  0000 C CNN
+	1    2500 23200
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 23250 2000 23250
+Text Label 1780 23250 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 23150 2000 23150
+Text Label 1780 23150 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C3 C3
+U 1 1 1EBD07C8
+P 2500 24500
+F 0 "C3" H 2500 24000 50  0000 C CNN
+F 1 "100nF 16V" H 2500 25000 50  0000 C CNN
+	1    2500 24500
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 24550 2000 24550
+Text Label 1780 24550 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 24450 2000 24450
+Text Label 1780 24450 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R1 R1
+U 1 1 E74F8D4D
+P 2500 25800
+F 0 "R1" H 2500 25300 50  0000 C CNN
+F 1 "100k 1%" H 2500 26300 50  0000 C CNN
+	1    2500 25800
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 25850 2000 25850
+Text Label 1780 25850 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 25750 2000 25750
+Text Label 1780 25750 2    40   ~ 0
+BUCK_FB
+$Comp
+L EPD_S3_Universal-cache:GEN_R2 R2
+U 1 1 8D718605
+P 2500 27100
+F 0 "R2" H 2500 26600 50  0000 C CNN
+F 1 "22.1k 1%" H 2500 27600 50  0000 C CNN
+	1    2500 27100
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 27150 2000 27150
+Text Label 1780 27150 2    40   ~ 0
+BUCK_FB
+Wire Wire Line
+	1800 27050 2000 27050
+Text Label 1780 27050 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C4 C4
+U 1 1 6467E9D9
+P 2500 28400
+F 0 "C4" H 2500 27900 50  0000 C CNN
+F 1 "22pF" H 2500 28900 50  0000 C CNN
+	1    2500 28400
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 28450 2000 28450
+Text Label 1780 28450 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 28350 2000 28350
+Text Label 1780 28350 2    40   ~ 0
+BUCK_FB
+$Comp
+L EPD_S3_Universal-cache:GEN_R3 R3
+U 1 1 2B8196BE
+P 2500 29700
+F 0 "R3" H 2500 29200 50  0000 C CNN
+F 1 "10k" H 2500 30200 50  0000 C CNN
+	1    2500 29700
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	1800 29750 2000 29750
+Text Label 1780 29750 2    40   ~ 0
+3V3
+Wire Wire Line
+	1800 29650 2000 29650
+Text Label 1780 29650 2    40   ~ 0
+EN
+$Comp
+L EPD_S3_Universal-cache:GEN_C5 C5
+U 1 1 88B2BEDB
+P 8500 2000
+F 0 "C5" H 8500 1500 50  0000 C CNN
+F 1 "1uF 50V" H 8500 2500 50  0000 C CNN
+	1    8500 2000
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 2050 8000 2050
+Text Label 7780 2050 2    40   ~ 0
+EN
+Wire Wire Line
+	7800 1950 8000 1950
+Text Label 7780 1950 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R4 R4
+U 1 1 858B0E29
+P 8500 3300
+F 0 "R4" H 8500 2800 50  0000 C CNN
+F 1 "10k" H 8500 3800 50  0000 C CNN
+	1    8500 3300
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 3350 8000 3350
+Text Label 7780 3350 2    40   ~ 0
+3V3
+Wire Wire Line
+	7800 3250 8000 3250
+Text Label 7780 3250 2    40   ~ 0
+BOOT
+$Comp
+L EPD_S3_Universal-cache:GEN_R5 R5
+U 1 1 C817506B
+P 8500 4600
+F 0 "R5" H 8500 4100 50  0000 C CNN
+F 1 "22R" H 8500 5100 50  0000 C CNN
+	1    8500 4600
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 4650 8000 4650
+Text Label 7780 4650 2    40   ~ 0
+USB_D-
+Wire Wire Line
+	7800 4550 8000 4550
+Text Label 7780 4550 2    40   ~ 0
+USB_DM_MCU
+$Comp
+L EPD_S3_Universal-cache:GEN_R6 R6
+U 1 1 D46558AB
+P 8500 5900
+F 0 "R6" H 8500 5400 50  0000 C CNN
+F 1 "22R" H 8500 6400 50  0000 C CNN
+	1    8500 5900
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 5950 8000 5950
+Text Label 7780 5950 2    40   ~ 0
+USB_D+
+Wire Wire Line
+	7800 5850 8000 5850
+Text Label 7780 5850 2    40   ~ 0
+USB_DP_MCU
+$Comp
+L EPD_S3_Universal-cache:GEN_C6 C6
+U 1 1 E18D4384
+P 8500 7200
+F 0 "C6" H 8500 6700 50  0000 C CNN
+F 1 "10uF 10V" H 8500 7700 50  0000 C CNN
+	1    8500 7200
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 7250 8000 7250
+Text Label 7780 7250 2    40   ~ 0
+3V3
+Wire Wire Line
+	7800 7150 8000 7150
+Text Label 7780 7150 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C7 C7
+U 1 1 E86432F4
+P 8500 8500
+F 0 "C7" H 8500 8000 50  0000 C CNN
+F 1 "100nF 16V" H 8500 9000 50  0000 C CNN
+	1    8500 8500
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 8550 8000 8550
+Text Label 7780 8550 2    40   ~ 0
+3V3
+Wire Wire Line
+	7800 8450 8000 8450
+Text Label 7780 8450 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_L2 L2
+U 1 1 4369163E
+P 8500 9800
+F 0 "L2" H 8500 9300 50  0000 C CNN
+F 1 "10uH 1A" H 8500 10300 50  0000 C CNN
+	1    8500 9800
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 9850 8000 9850
+Text Label 7780 9850 2    40   ~ 0
+3V3
+Wire Wire Line
+	7800 9750 8000 9750
+Text Label 7780 9750 2    40   ~ 0
+SW_EPD
+$Comp
+L EPD_S3_Universal-cache:GEN_D1 D1
+U 1 1 1369E6D7
+P 8500 11100
+F 0 "D1" H 8500 10600 50  0000 C CNN
+F 1 "MBR0530" H 8500 11600 50  0000 C CNN
+	1    8500 11100
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 11150 8000 11150
+Text Label 7780 11150 2    40   ~ 0
+PUMP_NEG
+Wire Wire Line
+	7800 11050 8000 11050
+Text Label 7780 11050 2    40   ~ 0
+PREVGL
+$Comp
+L EPD_S3_Universal-cache:GEN_D2 D2
+U 1 1 5D30C51F
+P 8500 12400
+F 0 "D2" H 8500 11900 50  0000 C CNN
+F 1 "MBR0530" H 8500 12900 50  0000 C CNN
+	1    8500 12400
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 12450 8000 12450
+Text Label 7780 12450 2    40   ~ 0
+PUMP_NEG
+Wire Wire Line
+	7800 12350 8000 12350
+Text Label 7780 12350 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_D3 D3
+U 1 1 BDD05D4A
+P 8500 13700
+F 0 "D3" H 8500 13200 50  0000 C CNN
+F 1 "MBR0530" H 8500 14200 50  0000 C CNN
+	1    8500 13700
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 13750 8000 13750
+Text Label 7780 13750 2    40   ~ 0
+SW_EPD
+Wire Wire Line
+	7800 13650 8000 13650
+Text Label 7780 13650 2    40   ~ 0
+PREVGH
+$Comp
+L EPD_S3_Universal-cache:GEN_R8 R8
+U 1 1 79EE64E7
+P 8500 15000
+F 0 "R8" H 8500 14500 50  0000 C CNN
+F 1 "10k" H 8500 15500 50  0000 C CNN
+	1    8500 15000
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 15050 8000 15050
+Text Label 7780 15050 2    40   ~ 0
+GDR
+Wire Wire Line
+	7800 14950 8000 14950
+Text Label 7780 14950 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R9 R9
+U 1 1 5242552E
+P 8500 16300
+F 0 "R9" H 8500 15800 50  0000 C CNN
+F 1 "0.47R 1%" H 8500 16800 50  0000 C CNN
+	1    8500 16300
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 16350 8000 16350
+Text Label 7780 16350 2    40   ~ 0
+RESE_047
+Wire Wire Line
+	7800 16250 8000 16250
+Text Label 7780 16250 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R10 R10
+U 1 1 A77DDE25
+P 8500 17600
+F 0 "R10" H 8500 17100 50  0000 C CNN
+F 1 "2.2R 1%" H 8500 18100 50  0000 C CNN
+	1    8500 17600
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 17650 8000 17650
+Text Label 7780 17650 2    40   ~ 0
+RESE_2R2
+Wire Wire Line
+	7800 17550 8000 17550
+Text Label 7780 17550 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R11 R11
+U 1 1 483CCE70
+P 8500 18900
+F 0 "R11" H 8500 18400 50  0000 C CNN
+F 1 "3R 1%" H 8500 19400 50  0000 C CNN
+	1    8500 18900
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 18950 8000 18950
+Text Label 7780 18950 2    40   ~ 0
+BS
+Wire Wire Line
+	7800 18850 8000 18850
+Text Label 7780 18850 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_R12 R12
+U 1 1 A9ABD9B2
+P 8500 20200
+F 0 "R12" H 8500 19700 50  0000 C CNN
+F 1 "10k" H 8500 20700 50  0000 C CNN
+	1    8500 20200
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 20250 8000 20250
+Text Label 7780 20250 2    40   ~ 0
+3V3
+Wire Wire Line
+	7800 20150 8000 20150
+Text Label 7780 20150 2    40   ~ 0
+EPD_BUSY
+$Comp
+L EPD_S3_Universal-cache:GEN_C8 C8
+U 1 1 EB7C9C89
+P 8500 21500
+F 0 "C8" H 8500 21000 50  0000 C CNN
+F 1 "4.7uF 25V" H 8500 22000 50  0000 C CNN
+	1    8500 21500
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 21550 8000 21550
+Text Label 7780 21550 2    40   ~ 0
+VGL
+Wire Wire Line
+	7800 21450 8000 21450
+Text Label 7780 21450 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C9 C9
+U 1 1 60B177E2
+P 8500 22800
+F 0 "C9" H 8500 22300 50  0000 C CNN
+F 1 "4.7uF 25V" H 8500 23300 50  0000 C CNN
+	1    8500 22800
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 22850 8000 22850
+Text Label 7780 22850 2    40   ~ 0
+VGH
+Wire Wire Line
+	7800 22750 8000 22750
+Text Label 7780 22750 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C10 C10
+U 1 1 027AE505
+P 8500 24100
+F 0 "C10" H 8500 23600 50  0000 C CNN
+F 1 "4.7uF 25V" H 8500 24600 50  0000 C CNN
+	1    8500 24100
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 24150 8000 24150
+Text Label 7780 24150 2    40   ~ 0
+PREVGH
+Wire Wire Line
+	7800 24050 8000 24050
+Text Label 7780 24050 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C11 C11
+U 1 1 C874FC68
+P 8500 25400
+F 0 "C11" H 8500 24900 50  0000 C CNN
+F 1 "4.7uF 25V" H 8500 25900 50  0000 C CNN
+	1    8500 25400
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 25450 8000 25450
+Text Label 7780 25450 2    40   ~ 0
+VSL
+Wire Wire Line
+	7800 25350 8000 25350
+Text Label 7780 25350 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C12 C12
+U 1 1 9A1D8ACF
+P 8500 26700
+F 0 "C12" H 8500 26200 50  0000 C CNN
+F 1 "4.7uF 25V" H 8500 27200 50  0000 C CNN
+	1    8500 26700
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 26750 8000 26750
+Text Label 7780 26750 2    40   ~ 0
+PREVGL
+Wire Wire Line
+	7800 26650 8000 26650
+Text Label 7780 26650 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C14 C14
+U 1 1 E1C701C4
+P 8500 28000
+F 0 "C14" H 8500 27500 50  0000 C CNN
+F 1 "1uF 50V" H 8500 28500 50  0000 C CNN
+	1    8500 28000
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 28050 8000 28050
+Text Label 7780 28050 2    40   ~ 0
+VDD_EPD
+Wire Wire Line
+	7800 27950 8000 27950
+Text Label 7780 27950 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C15 C15
+U 1 1 598DDEFE
+P 8500 29300
+F 0 "C15" H 8500 28800 50  0000 C CNN
+F 1 "1uF 50V" H 8500 29800 50  0000 C CNN
+	1    8500 29300
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	7800 29350 8000 29350
+Text Label 7780 29350 2    40   ~ 0
+VPP
+Wire Wire Line
+	7800 29250 8000 29250
+Text Label 7780 29250 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C16 C16
+U 1 1 1B0588FD
+P 14500 2000
+F 0 "C16" H 14500 1500 50  0000 C CNN
+F 1 "4.7uF 25V" H 14500 2500 50  0000 C CNN
+	1    14500 2000
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	13800 2050 14000 2050
+Text Label 13780 2050 2    40   ~ 0
+VSH
+Wire Wire Line
+	13800 1950 14000 1950
+Text Label 13780 1950 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C17 C17
+U 1 1 4E5B6C97
+P 14500 3300
+F 0 "C17" H 14500 2800 50  0000 C CNN
+F 1 "1uF 50V" H 14500 3800 50  0000 C CNN
+	1    14500 3300
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	13800 3350 14000 3350
+Text Label 13780 3350 2    40   ~ 0
+VCOM
+Wire Wire Line
+	13800 3250 14000 3250
+Text Label 13780 3250 2    40   ~ 0
+GND
+$Comp
+L EPD_S3_Universal-cache:GEN_C18 C18
+U 1 1 C5B99D5C
+P 14500 4600
+F 0 "C18" H 14500 4100 50  0000 C CNN
+F 1 "4.7uF 25V" H 14500 5100 50  0000 C CNN
+	1    14500 4600
+	1    0    0    -1
+$EndComp
+Wire Wire Line
+	13800 4650 14000 4650
+Text Label 13780 4650 2    40   ~ 0
+SW_EPD
+Wire Wire Line
+	13800 4550 14000 4550
+Text Label 13780 4550 2    40   ~ 0
+PUMP_NEG
+$EndSCHEMATC
