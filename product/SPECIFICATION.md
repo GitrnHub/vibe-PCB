@@ -23,18 +23,35 @@ The enclosure model targets a **4.2-inch 400×300 panel** in the GDEY042T81 mech
 
 ## Product-level functions
 
-- Wi-Fi image/content delivery
-- BLE commissioning path (firmware roadmap)
-- Native USB firmware download/debug
-- Full/partial refresh profiles per panel controller
-- OTA firmware update (firmware roadmap)
-- Local web status/configuration UI (firmware roadmap)
-- Deep-sleep oriented operation
-- Replaceable display frame concept
-- Parametric 3D-printable enclosure source and wall-mount relief
+### Implemented in the reference firmware baseline
+
+- Wi-Fi SoftAP setup/service network
+- Local web service dashboard
+- JSON board-status and pin-map APIs
+- Panel hardware-reset service action
+- Timer deep-sleep smoke-test action
+- Native USB firmware download/debug path
+- SPI/I²C board-support initialization
+
+### Requires an exact panel profile or later product revision
+
+- actual framebuffer refresh and full/partial refresh LUTs — panel/controller-specific
+- image upload, dithering and content scheduling
+- STA provisioning and persistent Wi-Fi configuration
+- BLE commissioning
+- OTA firmware update
+- integrated USB-C receptacle / Li-ion charger / fuel gauge / RTC on the next product PCB revision
+
+## Mechanical/product structure
+
+- replaceable front-display frame concept
+- 4.2-inch reference panel locating geometry
+- rear shell with PCB mounting bosses
+- service opening and wall-mount relief
+- parametric OpenSCAD source suitable for STL export after final fit verification
 
 ## Revision status
 
 - `EPD_S3_Universal v0.15`: prototype-candidate electronics; custom geometry validation passed, but no claim of completed physical-production validation.
 - `Enclosure v0.1`: parametric fit-check model.
-- `Product firmware`: bring-up baseline plus architecture/roadmap; panel-specific LUT/initialization still required per exact display.
+- `Product firmware`: local service-console baseline implemented; panel-specific LUT/initialization still required per exact display.
