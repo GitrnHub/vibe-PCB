@@ -3,224 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="vibe-PCB / vibe-EPD：ESP32-S3 墨水屏主板、原理图、PCB、Gerber、固件、结构 CAD 与完整产品工程资料。">
-<title>vibe-PCB · vibe-EPD Engineering Reference</title>
-<link rel="stylesheet" href="./assets/site.css">
+<meta name="description" content="vibe-EPD：一个基于 ESP32-S3 的开源墨水屏概念设计，包含 PCB、原理图、Gerber、固件与结构 CAD。">
+<title>vibe-EPD · 墨水屏概念设计</title>
+<style>
+:root{--ink:#191919;--muted:#757575;--soft:#f5f5f7;--line:#e8e8ea;--orange:#ff6900;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}.nav{height:64px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.06)}.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;text-decoration:none;letter-spacing:-.02em}.brand span{color:var(--orange)}.navlinks{display:flex;gap:26px;font-size:14px;color:#5f5f5f}.navlinks a{text-decoration:none}.navlinks a:hover{color:#111}.hero{text-align:center;padding:88px 0 54px}.badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f1f1f3;color:#666;font-size:12px}.hero h1{font-size:clamp(58px,9vw,108px);line-height:.94;letter-spacing:-.065em;margin:24px 0 20px;font-weight:850}.hero h2{font-size:clamp(24px,3vw,38px);line-height:1.18;letter-spacing:-.035em;margin:0;font-weight:650}.hero p{font-size:17px;color:var(--muted);margin:18px auto 0;max-width:620px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0 0}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:22px;text-decoration:none;font-size:14px;border:1px solid #d9d9dc;background:#fff}.btn.primary{background:var(--orange);color:#fff;border-color:var(--orange)}.heroVisual{margin:58px auto 0;max-width:1040px;background:var(--soft);border-radius:34px;overflow:hidden}.heroVisual svg{display:block;width:100%;height:auto}.features{padding:34px 0 86px}.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.feature{background:var(--soft);border-radius:22px;padding:24px 22px;min-height:128px}.feature b{display:block;font-size:22px;letter-spacing:-.03em}.feature span{display:block;color:var(--muted);font-size:13px;margin-top:8px}.section{padding:104px 0}.section.soft{background:var(--soft)}.sectionTitle{text-align:center;margin-bottom:48px}.sectionTitle .kicker{color:var(--orange);font-size:13px;font-weight:700;letter-spacing:.08em}.sectionTitle h2{font-size:clamp(38px,5vw,64px);line-height:1.02;letter-spacing:-.055em;margin:10px 0 12px}.sectionTitle p{margin:0 auto;color:var(--muted);max-width:580px;font-size:15px}.hardwareGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.hardwareCard{background:#0f1115;border-radius:30px;overflow:hidden;color:#fff}.hardwareCard.light{background:#fff;color:#171717;border:1px solid var(--line)}.hardwareCard header{padding:24px 26px 0}.hardwareCard h3{font-size:26px;letter-spacing:-.035em;margin:0}.hardwareCard small{display:block;margin-top:6px;color:#9ca2aa}.hardwareCard.light small{color:var(--muted)}.hardwareCard svg{display:block;width:100%;height:auto;margin-top:8px}.cardLinks{display:flex;gap:16px;flex-wrap:wrap;padding:0 26px 24px}.cardLinks a{text-decoration:none;font-size:13px;color:#ffb37f}.hardwareCard.light .cardLinks a{color:#d85400}.structure{display:grid;grid-template-columns:.82fr 1.18fr;gap:56px;align-items:center}.structureCopy h2{font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-.055em;margin:0 0 18px}.structureCopy p{color:var(--muted);font-size:17px;line-height:1.75;margin:0;max-width:470px}.miniSpecs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:28px}.miniSpecs div{background:#fff;padding:16px}.miniSpecs b,.miniSpecs span{display:block}.miniSpecs b{font-size:14px}.miniSpecs span{font-size:12px;color:var(--muted);margin-top:3px}.structureVisual{background:#fff;border-radius:30px;border:1px solid var(--line);overflow:hidden}.structureVisual svg{display:block;width:100%;height:auto}.downloadGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.download{display:block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;text-decoration:none;transition:.2s}.download:hover{transform:translateY(-2px);border-color:#c9c9cd}.download b{display:block;font-size:16px}.download span{display:block;color:var(--muted);font-size:12px;margin-top:8px;line-height:1.5}.note{text-align:center;color:#9a9a9a;font-size:12px;margin-top:28px}.footer{padding:38px 0 46px;border-top:1px solid var(--line);color:#8a8a8a;font-size:12px}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.navlinks{display:none}.featureGrid,.downloadGrid{grid-template-columns:1fr 1fr}.hardwareGrid,.structure{grid-template-columns:1fr}.structure{gap:28px}.structureCopy{max-width:700px}.section{padding:78px 0}}
+@media(max-width:560px){.wrap{width:min(calc(100% - 30px),var(--max))}.hero{padding-top:64px}.hero h1{font-size:58px}.featureGrid,.downloadGrid{grid-template-columns:1fr}.heroVisual{border-radius:22px}.hardwareCard,.structureVisual{border-radius:22px}.section{padding:64px 0}.sectionTitle{margin-bottom:30px}}
+</style>
 </head>
 <body>
-<nav class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#top">vibe<span>-PCB</span></a>
-    <div class="links">
-      <a href="#core">PCB / 原理图</a>
-      <a href="#system">产品结构</a>
-      <a href="#mechanical">机械</a>
-      <a href="#manufacturing">制造</a>
-      <a href="#downloads">下载</a>
-      <a href="https://github.com/GitrnHub/vibe-PCB">GitHub ↗</a>
-    </div>
-  </div>
-</nav>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top">vibe<span>-PCB</span></a><div class="navlinks"><a href="#hardware">PCB</a><a href="#hardware">原理图</a><a href="#product">结构</a><a href="#files">下载</a><a href="https://github.com/GitrnHub/vibe-PCB">GitHub ↗</a></div></div></nav>
 
 <header id="top" class="hero">
-  <div class="wrap heroGrid">
-    <div class="heroCopy">
-      <div class="eyebrow">AI-assisted · open hardware · reproducible</div>
-      <div class="releaseRow"><span class="status now">v0.15 ELECTRONICS</span><span class="status mech">v0.1 MECHANICAL</span></div>
-      <h1><span class="heroName">vibe-EPD</span><span class="heroClaim">ESP32-S3 墨水屏完整产品参考设计</span></h1>
-      <p class="lede">把真正能继续修改的电路设计、PCB 制造数据、固件和产品结构放在同一个工程里。首页先看最重要的 <strong>PCB 与原理图</strong>，产品外观和路线图放到后面。</p>
-      <div class="actions">
-        <a class="btn primary" href="#core">查看 PCB 与原理图</a>
-        <a class="btn" href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip">下载 Gerber</a>
-        <a class="btn quiet" href="https://github.com/GitrnHub/vibe-PCB">仓库源码 ↗</a>
-      </div>
-      <p class="micro">Prototype candidate：制造前仍需 CAM/DFM、器件旋转、目标屏幕 pinout 与首板实物验证。</p>
+  <div class="wrap">
+    <span class="badge">OPEN E-INK CONCEPT</span>
+    <h1>vibe-EPD</h1>
+    <h2>一个基于 ESP32-S3 的墨水屏概念设计</h2>
+    <p>开放 PCB、原理图、制造文件、固件与结构 CAD。目标很简单：把一块墨水屏做成可继续开发的完整硬件概念。</p>
+    <div class="actions"><a class="btn primary" href="#hardware">查看硬件</a><a class="btn" href="https://github.com/GitrnHub/vibe-PCB">查看源码</a></div>
+    <div class="heroVisual" aria-label="vibe-EPD 产品概念图">
+      <svg viewBox="0 0 1200 650" role="img" aria-label="vibe-EPD 墨水屏概念产品">
+        <defs><linearGradient id="caseHero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2b2d31"/><stop offset="1" stop-color="#111216"/></linearGradient><filter id="shadowHero" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="26" stdDeviation="28" flood-opacity=".18"/></filter></defs>
+        <rect width="1200" height="650" fill="#f5f5f7"/>
+        <g transform="translate(245 72) rotate(-2 355 250)" filter="url(#shadowHero)">
+          <rect width="710" height="500" rx="42" fill="url(#caseHero)"/>
+          <rect x="42" y="42" width="626" height="416" rx="14" fill="#202126"/>
+          <rect x="66" y="66" width="578" height="368" rx="5" fill="#f0eee4"/>
+          <g fill="#202020" font-family="system-ui,sans-serif"><text x="110" y="145" font-size="36" font-weight="750">vibe-EPD</text><text x="110" y="183" font-size="16" letter-spacing="2">OPEN E-INK CONCEPT</text><line x1="110" y1="214" x2="600" y2="214" stroke="#2d2d2d" stroke-width="2"/><text x="110" y="266" font-size="24">ESP32-S3</text><text x="110" y="306" font-size="24">24-pin E-Paper</text><text x="110" y="346" font-size="24">Open PCB · Firmware · CAD</text><rect x="110" y="378" width="118" height="34" rx="17" fill="#202020"/><text x="137" y="401" fill="#f0eee4" font-size="14">CONCEPT</text></g>
+        </g>
+      </svg>
     </div>
-    <figure class="heroRender">
-      <img src="./assets/product-render.svg" alt="vibe-EPD 4.2-inch reference product render">
-      <figcaption>Reference enclosure · 4.2-inch class</figcaption>
-    </figure>
-  </div>
-
-  <div class="wrap specStrip" aria-label="核心规格">
-    <div><b>ESP32-S3</b><span>Wi-Fi · BLE · native USB</span></div>
-    <div><b>60 × 45 mm</b><span>2-layer PCB</span></div>
-    <div><b>24-pin / 0.5 mm</b><span>E-Paper FPC</span></div>
-    <div><b>Gerber + BOM/CPL</b><span>manufacturing package</span></div>
   </div>
 </header>
 
-<main>
-<section id="core" class="section coreSection">
-  <div class="wrap">
-    <div class="sectionHead">
-      <div><div class="eyebrow">CORE ENGINEERING</div><h2>电路板与原理图</h2></div>
-      <p>不再藏在标签页里。PCB 和原理图常驻展示，点击图面可直接放大；制造文件和可编辑源文件从对应卡片进入。</p>
-    </div>
+<section class="features"><div class="wrap featureGrid">
+  <div class="feature"><b>ESP32-S3</b><span>Wi-Fi · BLE · native USB</span></div>
+  <div class="feature"><b>60 × 45 mm</b><span>双层 PCB</span></div>
+  <div class="feature"><b>24-pin</b><span>0.5 mm E-Paper FPC</span></div>
+  <div class="feature"><b>Open Hardware</b><span>Gerber · source · firmware · CAD</span></div>
+</div></section>
 
-    <div class="engineeringGrid">
-      <article class="engineeringCard primaryEngineering">
-        <div class="visualHeader">
-          <div><span class="index">01</span><h3>PCB Layout</h3></div>
-          <span class="chip">60 × 45 mm · 2 Layer</span>
-        </div>
-        <button class="imageButton" type="button" data-lightbox="./assets/pcb-preview.svg" data-alt="EPD S3 Universal v0.15 PCB layout preview">
-          <img src="./assets/pcb-preview.svg" alt="EPD S3 Universal v0.15 PCB layout preview">
-          <span>点击放大 PCB</span>
-        </button>
-        <div class="engineeringMeta">
-          <p>ESP32-S3 主控、24-pin FPC、高压 EPD 辅助网络、5 V→3.3 V 电源与 USB 信号均落在当前 v0.15 板上。</p>
-          <div class="inlineLinks">
-            <a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source">可编辑源文件 ↗</a>
-            <a href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip">Gerber ZIP ↓</a>
-          </div>
-        </div>
+<section id="hardware" class="section soft">
+  <div class="wrap">
+    <div class="sectionTitle"><div class="kicker">CORE HARDWARE</div><h2>PCB 与原理图</h2><p>最重要的工程内容直接展示，不再藏在标签页和长说明里。</p></div>
+    <div class="hardwareGrid">
+      <article class="hardwareCard">
+        <header><h3>PCB Layout</h3><small>EPD_S3_Universal v0.15 · 60 × 45 mm</small></header>
+        <svg viewBox="0 0 1280 760" role="img" aria-label="EPD S3 Universal PCB layout">
+          <rect width="1280" height="760" fill="#0f1115"/><g font-family="system-ui,sans-serif"><g transform="translate(205 110)"><rect width="720" height="540" rx="12" fill="#235641" stroke="#72a58d" stroke-width="4"/><circle cx="42" cy="42" r="15" fill="#0b0e13" stroke="#d6dce3"/><circle cx="678" cy="42" r="15" fill="#0b0e13" stroke="#d6dce3"/><circle cx="42" cy="498" r="15" fill="#0b0e13" stroke="#d6dce3"/><circle cx="678" cy="498" r="15" fill="#0b0e13" stroke="#d6dce3"/><rect x="225" y="20" width="270" height="150" rx="7" fill="#1b2027" stroke="#98a2ae"/><rect x="260" y="-3" width="200" height="44" fill="#c3b070"/><text x="300" y="103" fill="#f0f3f5" font-size="22">ESP32-S3</text><text x="267" y="128" fill="#9da7b2" font-size="14">WROOM-1-N8R2</text><rect x="225" y="392" width="270" height="58" rx="5" fill="#d0ba67"/><g fill="#171a1e"><rect x="235" y="403" width="250" height="7"/><rect x="235" y="418" width="250" height="7"/><rect x="235" y="433" width="250" height="7"/></g><text x="296" y="480" fill="#dce2e8" font-size="18">J2 · 24-pin / 0.5 mm</text><rect x="28" y="205" width="150" height="90" rx="8" fill="#15222d" stroke="#7190a9"/><text x="48" y="240" fill="#e7ecf1" font-size="18">5V → 3V3</text><text x="48" y="265" fill="#9aa5b0" font-size="14">SY8089A1</text><rect x="530" y="190" width="155" height="150" rx="8" fill="#281f17" stroke="#a77d47"/><text x="552" y="228" fill="#f0e3d2" font-size="18">EPD HV</text><text x="552" y="254" fill="#baa48b" font-size="14">pump + rails</text><text x="552" y="278" fill="#baa48b" font-size="14">RESE select</text><rect x="32" y="390" width="120" height="55" rx="7" fill="#1b2027" stroke="#6d7783"/><text x="51" y="424" fill="#e6ebf0" font-size="15">J1 USB/native</text><rect x="548" y="392" width="58" height="58" rx="8" fill="#252b33"/><rect x="625" y="392" width="58" height="58" rx="8" fill="#252b33"/><text x="550" y="476" fill="#a5aeb9" font-size="13">RESET</text><text x="636" y="476" fill="#a5aeb9" font-size="13">BOOT</text></g></g>
+        </svg>
+        <div class="cardLinks"><a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source">可编辑源文件 ↗</a><a href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip">Gerber ZIP ↓</a></div>
       </article>
 
-      <article class="engineeringCard">
-        <div class="visualHeader">
-          <div><span class="index">02</span><h3>Schematic</h3></div>
-          <span class="chip">Connectivity reference</span>
-        </div>
-        <button class="imageButton" type="button" data-lightbox="./assets/schematic.svg" data-alt="EPD S3 Universal schematic overview">
-          <img src="./assets/schematic.svg" alt="EPD S3 Universal schematic overview">
-          <span>点击放大原理图</span>
-        </button>
-        <div class="engineeringMeta">
-          <p>原理图视图直接对应网络表与 24-pin pinout；具体面板仍需核对控制器初始化和 waveform/LUT。</p>
-          <div class="inlineLinks">
-            <a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source">KiCad schematic ↗</a>
-            <a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/reference">Pinout / netlist ↗</a>
-          </div>
-        </div>
+      <article class="hardwareCard light">
+        <header><h3>Schematic</h3><small>功能连通性概览</small></header>
+        <svg viewBox="0 0 1200 700" role="img" aria-label="EPD S3 Universal schematic">
+          <rect width="1200" height="700" fill="#fff"/><g transform="scale(20)" font-family="system-ui,sans-serif" fill="#111"><text x="30" y="2" text-anchor="middle" font-size="1.3">EPD-S3-Universal functional schematic</text><rect x="5" y="7" width="13" height="7" fill="none" stroke="#111" stroke-width="0.15"/><text x="11.5" y="9.4" text-anchor="middle" font-size="0.9">5 V IN / native USB</text><text x="11.5" y="11.3" text-anchor="middle" font-size="0.65">J1: VBUS, D-, D+, GND</text><rect x="21" y="7" width="13" height="7" fill="none" stroke="#111" stroke-width="0.15"/><text x="27.5" y="9.4" text-anchor="middle" font-size="0.9">3.3 V buck</text><text x="27.5" y="11.3" text-anchor="middle" font-size="0.65">SY8089A1 + 2.2uH</text><rect x="39" y="7" width="14" height="7" fill="none" stroke="#111" stroke-width="0.15"/><text x="46" y="9.4" text-anchor="middle" font-size="0.9">ESP32-S3</text><text x="46" y="11.3" text-anchor="middle" font-size="0.65">N8R2 / optional N8R8</text><rect x="39" y="25" width="14" height="8" fill="none" stroke="#111" stroke-width="0.15"/><text x="46" y="27.4" text-anchor="middle" font-size="0.9">24-pin EPD FPC</text><text x="46" y="29.3" text-anchor="middle" font-size="0.65">FH12-24S-0.5SH</text><rect x="20" y="25" width="15" height="8" fill="none" stroke="#111" stroke-width="0.15"/><text x="27.5" y="27.4" text-anchor="middle" font-size="0.9">EPD HV pump</text><text x="27.5" y="29.3" text-anchor="middle" font-size="0.65">SI1308EDL + 3x MBR0530</text><rect x="5" y="25" width="12" height="8" fill="none" stroke="#111" stroke-width="0.15"/><text x="11" y="27.4" text-anchor="middle" font-size="0.9">RESE select</text><text x="11" y="29.3" text-anchor="middle" font-size="0.65">0.47R / 2.2R, SJ1</text><line x1="18" y1="10.5" x2="21" y2="10.5" stroke="#111" stroke-width="0.15"/><line x1="34" y1="10.5" x2="39" y2="10.5" stroke="#111" stroke-width="0.15"/><line x1="46" y1="14" x2="46" y2="25" stroke="#111" stroke-width="0.15"/><line x1="35" y1="29" x2="39" y2="29" stroke="#111" stroke-width="0.15"/><line x1="17" y1="29" x2="20" y2="29" stroke="#111" stroke-width="0.15"/></g>
+        </svg>
+        <div class="cardLinks"><a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source">KiCad schematic ↗</a><a href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/reference">Pinout / netlist ↗</a></div>
       </article>
     </div>
+  </div>
+</section>
 
-    <div class="factRow">
-      <div><small>MCU</small><strong>ESP32-S3-WROOM-1-N8R2</strong></div>
-      <div><small>DISPLAY BUS</small><strong>SPI + BUSY / RST / DC / CS</strong></div>
-      <div><small>POWER</small><strong>5 V input · local 3.3 V</strong></div>
-      <div><small>SOURCE</small><strong>KiCad + design.json preserved</strong></div>
+<section id="product" class="section">
+  <div class="wrap structure">
+    <div class="structureCopy"><span class="badge">PRODUCT CONCEPT</span><h2>从屏幕到外壳，作为一个整体。</h2><p>参考结构面向 4.2 英寸墨水屏。屏幕、FPC、60 × 45 mm 主板与参数化外壳保持独立，便于替换和继续迭代。</p><div class="miniSpecs"><div><b>4.2-inch</b><span>参考屏幕</span></div><div><b>104 × 90 mm</b><span>参考外壳面</span></div><div><b>OpenSCAD</b><span>参数化结构</span></div><div><b>M3</b><span>PCB 安装</span></div></div></div>
+    <div class="structureVisual">
+      <svg viewBox="0 0 900 680" role="img" aria-label="vibe-EPD 产品爆炸结构">
+        <rect width="900" height="680" fill="#fafafa"/><g font-family="system-ui,sans-serif"><g transform="translate(170 70)"><rect width="500" height="300" rx="30" fill="#202226"/><rect x="42" y="40" width="416" height="220" rx="8" fill="#111"/><text x="540" y="70" font-size="18" fill="#333">Front bezel</text></g><g transform="translate(190 155)"><rect width="460" height="260" rx="8" fill="#ece9de" stroke="#c8c4b8"/><rect x="18" y="18" width="424" height="224" fill="#dedacf"/><text x="520" y="118" font-size="18" fill="#333">E-Ink panel</text></g><g transform="translate(350 395)"><path d="M0 0h150v28H92v80H58V28H0z" fill="#d2a62b"/><text x="235" y="30" font-size="18" fill="#333">24-pin FPC</text></g><g transform="translate(260 485)"><rect width="320" height="150" rx="12" fill="#245b45"/><rect x="30" y="25" width="105" height="62" rx="5" fill="#1b2026"/><text x="49" y="63" fill="#fff" font-size="16">ESP32-S3</text><rect x="175" y="25" width="110" height="16" fill="#dbc46a"/><text x="360" y="62" font-size="18" fill="#333">Main PCB</text></g></g>
+      </svg>
     </div>
   </div>
 </section>
 
-<section id="system" class="section altSection">
+<section id="files" class="section soft">
   <div class="wrap">
-    <div class="sectionHead compact">
-      <div><div class="eyebrow">SYSTEM VIEW</div><h2>从电路到完整产品</h2></div>
-      <p>电气架构和机械结构并排看，避免产品外观盖过真正的工程信息。</p>
-    </div>
-    <div class="systemGrid">
-      <figure class="mediaPanel">
-        <div class="panelLabel"><b>系统架构</b><span>Electronics + firmware</span></div>
-        <button class="imageButton clean" type="button" data-lightbox="./assets/system-architecture.svg" data-alt="vibe-EPD system architecture">
-          <img src="./assets/system-architecture.svg" alt="vibe-EPD system architecture">
-        </button>
-      </figure>
-      <figure class="mediaPanel">
-        <div class="panelLabel"><b>产品爆炸结构</b><span>Display + PCB + enclosure</span></div>
-        <button class="imageButton clean" type="button" data-lightbox="./assets/exploded-view.svg" data-alt="vibe-EPD exploded product structure">
-          <img src="./assets/exploded-view.svg" alt="vibe-EPD exploded product structure">
-        </button>
-      </figure>
-    </div>
-    <div class="boundaryNote"><strong>当前硬件：</strong>ESP32-S3 + 24-pin EPD + 5 V 输入 / 原生 USB 信号。 <strong>下一版目标：</strong>USB-C、锂电充电、fuel gauge、RTC；这些不会在页面上伪装成 v0.15 已具备。</div>
-  </div>
-</section>
-
-<section id="mechanical" class="section">
-  <div class="wrap mechanicalGrid">
-    <div class="mechanicalCopy">
-      <div class="eyebrow">MECHANICAL</div>
-      <h2>参数化产品结构</h2>
-      <p class="sub">现有 enclosure-v0.1 用 OpenSCAD 保存，目标是让 PCB、屏幕和外壳成为同一套可修改工程，而不是只留下效果图。</p>
-      <dl class="detailList">
-        <div><dt>参考屏幕</dt><dd>4.2-inch · 91 × 77 mm class</dd></div>
-        <div><dt>外壳面尺寸</dt><dd>约 104 × 90 mm</dd></div>
-        <div><dt>内部板卡</dt><dd>60 × 45 mm PCB / M3 mounting</dd></div>
-        <div><dt>CAD</dt><dd>Parametric OpenSCAD source</dd></div>
-      </dl>
-      <a class="textLink" href="https://github.com/GitrnHub/vibe-PCB/tree/main/mechanical/enclosure-v0.1">打开结构 CAD ↗</a>
-    </div>
-    <figure class="mediaPanel mechanicalVisual">
-      <div class="panelLabel"><b>机械尺寸参考</b><span>Fit-check drawing</span></div>
-      <button class="imageButton clean" type="button" data-lightbox="./assets/mechanical-drawing.svg" data-alt="vibe-EPD mechanical drawing">
-        <img src="./assets/mechanical-drawing.svg" alt="vibe-EPD mechanical drawing">
-      </button>
-    </figure>
-  </div>
-</section>
-
-<section id="manufacturing" class="section altSection">
-  <div class="wrap">
-    <div class="sectionHead compact">
-      <div><div class="eyebrow">MANUFACTURING</div><h2>从工程文件到首板</h2></div>
-      <p>BOM 不再占首页版面，只保留为装配下载资料；主页专注设计、制造状态和首板风险。</p>
-    </div>
-    <div class="processGrid">
-      <div class="process done"><span>01</span><b>Design</b><p>原理图、PCB、netlist、pinout</p></div>
-      <div class="process done"><span>02</span><b>Fabrication</b><p>Gerber + PTH / NPTH drill</p></div>
-      <div class="process current"><span>03</span><b>First article</b><p>DFM、SMT rotation、5 pcs 验证</p></div>
-      <div class="process"><span>04</span><b>Product revision</b><p>实测后冻结下一版硬件</p></div>
-    </div>
-    <div class="manufacturingMedia">
-      <figure class="mediaPanel smallMedia">
-        <div class="panelLabel"><b>Gerber Stack</b><span>Fabrication view</span></div>
-        <button class="imageButton clean" type="button" data-lightbox="./assets/gerber-stack.svg" data-alt="Gerber layer stack preview">
-          <img src="./assets/gerber-stack.svg" alt="Gerber layer stack preview">
-        </button>
-      </figure>
-      <div class="warningPanel">
-        <span class="status road">FIRST ARTICLE REQUIRED</span>
-        <h3>下单前必须复核</h3>
-        <p>Gerber Viewer / DFM、CPL 元件旋转、FPC 插接方向、实际屏幕 24-pin pinout、RESE 配置以及对应控制器的初始化和 LUT。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap compatibilityGrid">
-    <div>
-      <div class="eyebrow">DISPLAY COMPATIBILITY</div>
-      <h2>24-pin 不等于所有屏通用</h2>
-      <p class="sub">基础板面向常见 24-pin SPI E-Paper。50-pin Spectra 6 等新接口应使用专用适配或独立硬件修订。</p>
-      <a class="textLink" href="https://github.com/GitrnHub/vibe-PCB/blob/main/hardware/epd-s3-v0.15/reference/fpc24_pinout.csv">查看 24-pin pinout ↗</a>
-    </div>
-    <figure class="mediaPanel compatibilityVisual">
-      <button class="imageButton clean" type="button" data-lightbox="./assets/display-compatibility.svg" data-alt="E-Paper display compatibility matrix">
-        <img src="./assets/display-compatibility.svg" alt="E-Paper display compatibility matrix">
-      </button>
-    </figure>
-  </div>
-</section>
-
-<section id="downloads" class="section downloadSection">
-  <div class="wrap">
-    <div class="sectionHead compact">
-      <div><div class="eyebrow">FILES</div><h2>工程文件</h2></div>
-      <p>把“看设计”和“拿去制造”分开。BOM/CPL 留在这里下载，不在首页铺表格。</p>
-    </div>
+    <div class="sectionTitle"><div class="kicker">OPEN FILES</div><h2>工程文件</h2><p>需要继续设计或打样时，再从这里进入。</p></div>
     <div class="downloadGrid">
-      <a class="download featured" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source"><b>Editable PCB source ↗</b><span>KiCad schematic + checksum-verified PCB/design source</span></a>
-      <a class="download featured" href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip"><b>Gerber manufacturing ZIP ↓</b><span>裸板制造直接使用此 ZIP</span></a>
-      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/reference"><b>Hardware reference ↗</b><span>pinout / netlist / validation</span></a>
-      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/assembly"><b>BOM + CPL ↗</b><span>SMT 装配资料，仅作为下载项</span></a>
-      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/firmware"><b>Firmware ↗</b><span>PlatformIO bring-up + local Web UI</span></a>
-      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/mechanical/enclosure-v0.1"><b>Mechanical CAD ↗</b><span>Parametric OpenSCAD enclosure</span></a>
+      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/hardware/epd-s3-v0.15/source"><b>PCB / Schematic</b><span>可编辑源文件与设计数据</span></a>
+      <a class="download" href="https://raw.githubusercontent.com/GitrnHub/vibe-PCB/main/hardware/epd-s3-v0.15/manufacturing/EPD_S3_Universal_Gerber.zip"><b>Gerber</b><span>PCB 制造 ZIP</span></a>
+      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/firmware"><b>Firmware</b><span>ESP32-S3 PlatformIO 工程</span></a>
+      <a class="download" href="https://github.com/GitrnHub/vibe-PCB/tree/main/mechanical/enclosure-v0.1"><b>Enclosure CAD</b><span>参数化 OpenSCAD 外壳</span></a>
     </div>
+    <p class="note">v0.15 为 prototype candidate。正式生产前仍需 DRC / CAM / DFM 与首板实物验证。</p>
   </div>
 </section>
-</main>
 
-<footer class="footer"><div class="wrap"><b>vibe-PCB</b><span>Open hardware engineering reference · <span id="year"></span></span><span>Prototype data requires first-article verification before production.</span></div></footer>
-
-<dialog id="imageViewer" class="imageViewer" aria-label="工程图放大查看">
-  <div class="viewerBar"><span id="viewerTitle">Engineering view</span><button id="viewerClose" type="button" aria-label="关闭">×</button></div>
-  <img id="viewerImage" alt="">
-</dialog>
-
-<script src="./assets/site.js"></script>
+<footer class="footer"><div class="wrap"><span>vibe-PCB / vibe-EPD</span><span>Open E-Ink hardware concept · 2026</span></div></footer>
 </body>
 </html>
